@@ -38,6 +38,7 @@ h1, h5 {
 	border-style: solid;
 	border: 2px solid black;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 #add,#add2{
@@ -63,10 +64,6 @@ h1, h5 {
 	margin:auto;
 	padding-top:10px;
 }
- 
-#time,#timetwo{
-	width: 80px;
-}
 
 #format,#format2{
 	padding-left: 186px;
@@ -89,7 +86,7 @@ td{
     padding:10px;
     background-color:#e3e3e3;
 }
-tr:first-child, td:first-child { font-weight: bold }
+tr:first-child, td:first-child { font-weight: bold }\
 </style>
 </head>
 <body>
@@ -118,8 +115,13 @@ tr:first-child, td:first-child { font-weight: bold }
 	<option value="Adventure">Adventure</option>
 </select><br><br>
 <label for="time">How long is your movie?</label>
-<input type="text" id="time" name="time" autocomplete="off" ></input>
-<p id="format"><em>hour:minute</em></p><br>
+<select id="time" name="time">
+	<option value="None Selected">Select...</option>
+	<option value="<1 hour">Less than 1 hour</option>
+	<option value="1-2 hours">1-2 hours</option>
+	<option value="2-3 hours">2-3 hours</option>
+	<option value="3-4 hours">3-4 hours</option>
+</select><br><br>
 <label for="movie2">What is the name of your second movie?</label>
 <input type="text" id="movie2" name="movie2" autocomplete="off" maxlength="30"></input><br><br>
 <label for="rating2">What is the rating?</label>
@@ -139,13 +141,18 @@ tr:first-child, td:first-child { font-weight: bold }
 	<option value="Adventure">Adventure</option>
 </select><br><br>
 <label for="timetwo">How long is your movie?</label>
-<input type="text" id="timetwo" name="timetwo" autocomplete="off" ></input>
-<p id="format2"><em>hour:minute</em></p><br>
+<select id="timetwo" name="timetwo">
+	<option value="None Selected">Select...</option>
+	<option value="<1 hour">Less than 1 hour</option>
+	<option value="1-2 hours">1-2 hours</option>
+	<option value="2-3 hours">2-3 hours</option>
+	<option value="3-4 hours">3-4 hours</option>
+</select><br><br>
 <input type="submit" id="submit" name="submit"></input>
 </form>
 </div>
 <div id="accept">
-<h5>Check your response for the first movie:</h5>
+<h5>Check your response for the movies:</h5>
 <?php
 if(isset($_REQUEST['submit'])) {
 	echo "<pre>";
